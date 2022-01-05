@@ -1,0 +1,19 @@
+{
+    "name": "TEST_NFT_TWO",
+    "symbol": "",
+    "image": "test-nft-two.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "test-nft-two.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "FfMtBk4rJbedUrqAmSmLUJFMreK7AF93GxHr3yc79MM",
+          "share": 100
+        }
+      ]
+    }
+  }

@@ -1,0 +1,23 @@
+{
+    "program": {
+        "uuid": "BGFAGy",
+        "config": "BGFAGyBESCiPRpY3yCYRTuctzUDmanaM5J9u7DifeUJ7"
+    },
+    "items": {
+        "test-nft-one": {
+            "link": "https://arweave.net/-jXmiWckGU_Zayy8iRwTADSntlVzNcYtJ_sjaLdjA0s",
+            "name": "TEST_NFT_ONE",
+            "onChain": true
+        },
+        "test-nft-two": {
+            "link": "https://arweave.net/ZdS-Nj-JoI1Z8WaveuuMHrf10K1XU6D9LjyxoxzFdLk",
+            "name": "TEST_NFT_TWO",
+            "onChain": true
+        }
+    },
+    "env": "devnet",
+    "cacheName": "temp",
+    "authority": "FfMtBk4rJbedUrqAmSmLUJFMreK7AF93GxHr3yc79MM",
+    "candyMachineAddress": "FNbsiZCKjY4MbD18bVn56SDLJbwVEgHzyr85xbw6rmpa",
+    "startDate": 1638317520
+}

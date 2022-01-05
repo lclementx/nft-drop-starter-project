@@ -1,0 +1,19 @@
+{
+    "name": "TEST_NFT_ONE",
+    "symbol": "",
+    "image": "test-nft-one.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "test-nft-one.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "FfMtBk4rJbedUrqAmSmLUJFMreK7AF93GxHr3yc79MM",
+          "share": 100
+        }
+      ]
+    }
+  }
