@@ -55,7 +55,7 @@ const App = () => {
   /**
    * We want to render this UI when the user hasn't connected their wallet to our app yet
    */
-  const rednerNotConnectedContainer = () => (
+  const renderNotConnectedContainer = () => (
   <button
     className="cta-button connect-wallet-button"
     onClick={connectWallet}
@@ -85,7 +85,7 @@ const App = () => {
           <p className="sub-text">NFT drop machine with fair mint</p>
           {/* Render your connect to wallet button right here */}
           {/* Add the condition to show this only if we don't have a wallet address */}
-          {!walletAddress && rednerNotConnectedContainer()}
+          {!walletAddress && renderNotConnectedContainer()}
         </div>
         {/* Check for walletAddress and then pass in walleAddress */}
         {walletAddress && <CandyMachine walletAddress={window.solana}/>}

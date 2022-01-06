@@ -4,6 +4,7 @@ import { Program, Provider, web3 } from '@project-serum/anchor';
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
 import { programs } from '@metaplex/js';
 import './CandyMachine.css';
+import CountdownTimer from '../CountdownTimer';
 import {
   candyMachineProgram,
   TOKEN_METADATA_PROGRAM_ID,
@@ -343,6 +344,21 @@ const CandyMachine = ({ walletAddress }) => {
     </div>
   );
 
+  const renderDropTimer = () => {
+    //Get the Current Date and Drop Date in a JavaScript Date object
+    const currentDate = new Date();
+    const dropDate = new Date(machineStats.goLiveDate * 1000);
+
+    //If current date < drop date, render our component
+    if(currentDate < dropDate){
+      console.log('Before Drop Date!');
+      //Don't forget to pass in the drop date
+      return <CountdownTimer dropDate={dropDate}/>;
+    }
+    //else just return the current drop date
+    return <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
+  }
+
   const createAssociatedTokenAccountInstruction = (
     associatedTokenAddress,
     payer,
@@ -376,11 +392,17 @@ const CandyMachine = ({ walletAddress }) => {
   return (
     machineStats && (
       <div className="machine-container">
-        <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>
+        {/* Remove the one-liner previously defined and call the function to render the component instead */}
+        {renderDropTimer()}
         <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
+        {/* Check to see if these properties are equal */}
+        {machineStats.itemsRedeemed === machineStats.itemsAvailable ? (
+          <p className='sub-text'>Sold Out 🙊</p>
+        ) :  (
         <button className="cta-button mint-button" onClick={mintToken} disabled={isMinting}>
           Mint NFT
         </button>
+        )}
         {isLoadingMints && <p>LOADING MINTS...</p>}
         {/* If we have mints available in our array, let's render some items */}
         {mints.length > 0 && renderMintedItems()}
